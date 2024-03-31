@@ -20,6 +20,10 @@ Email:{
 Password:{
     type:String,
     required:true
+},
+Repeatpassword:{
+    type:String,
+    required:true
 }
 
 

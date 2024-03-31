@@ -31,7 +31,7 @@ const Login = (req, res) => {
 
 }
 const Register = (req, res) => {
-    let { Email, Password, Industry, Contact, CompanyName } = req.body
+    let { Email, Password, Industry, Contact, CompanyName,Repeatpassword } = req.body
     model.findOne({ Email }).then((data) => {
         if (data) {
             res.send("Already Register")
@@ -42,7 +42,8 @@ const Register = (req, res) => {
                 CompanyName,
                 Industry,
                 Password: bcryptypass,
-                Contact
+                Contact,
+                Repeatpassword
             })
             data.save().then((data) => {
                 res.send("register succesfully")
