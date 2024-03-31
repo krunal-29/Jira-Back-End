@@ -21,6 +21,7 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.listen(5000,()=>{
-    console.log("port is run on  3000")
+  let port = 5000
+app.listen(port,()=>{
+    console.log(`port is run on  ${port}`)
 })
