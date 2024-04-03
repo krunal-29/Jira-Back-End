@@ -21,8 +21,8 @@ const sprintRoute = require('./Routes/sprintRoute')
 
 app.use("/User",UserRoute)
 app.use('/Project',projectRoute)
-app.use('/Compny',CompanyRoutes)
-app.use('/Employe',employeroute)
+app.use('/Company',CompanyRoutes)
+app.use('/Employee',employeroute)
 app.use('/Sprint',sprintRoute)
 
 

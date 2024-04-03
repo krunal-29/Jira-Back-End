@@ -33,6 +33,7 @@ const Login = (req, res) => {
 const Register = (req, res) => {
     let { Email, Password, Industry, Contact, CompanyName,Repeatpassword } = req.body
     model.findOne({ Email }).then((data) => {
+        console.log(data)
         if (data) {
             res.send("Already Register")
         } else {
@@ -55,6 +56,7 @@ const Register = (req, res) => {
 
 
     }).catch((err) => {
+        console.log('Error',err)
         res.send({ msg: "error", err })
     })
 
