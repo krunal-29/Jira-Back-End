@@ -34,7 +34,7 @@ const DisplayEmployee=(req,res)=>{
     EmpModel.find().then((data)=>{
         if(data){
 
-            res.send({data})
+            res.send({data:data})
         }else{
             res.send({msg:"No Data Found"})
         }

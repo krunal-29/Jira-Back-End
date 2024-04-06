@@ -23,7 +23,7 @@ const prjectSchema = mongoose.Schema({
     },
     isDeleted:{
      type: Boolean,
-     required:true
+     // required:true
  }
 })
 
