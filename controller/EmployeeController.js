@@ -1,3 +1,4 @@
+const { model } = require("mongoose")
 const EmpModel = require("../Model/Employee")
 const AddEmployee = (req, res) => {
     let { EmployeeEmail, Age, Gender, Address, Role, EmployeeNumber, EmployeeName,isDeleted } = req.body
@@ -77,6 +78,14 @@ const DeleteEmployee=(req,res)=>{
     })
 
 }
+const hardDelete=(req,res)=>{
+    EmpModel.deleteOne({_id:req.query.id}).then((data)=>{
+    res.send("deleted succesfully")
+}).catch((Err)=>{
+    res.send(Err)
+})
+
+}
 const SoftDeletedEmployee=(req,res)=>{
     EmpModel.find().then((data)=>{
         let flitredEmployee=data.filter((ele)=>(ele.isDeleted!=true))
@@ -88,4 +97,4 @@ const SoftDeletedEmployee=(req,res)=>{
 }
 
 
-module.exports={AddEmployee,DisplayEmployee,UpdateEmployee,DeleteEmployee,SoftDeletedEmployee}
+module.exports={AddEmployee,DisplayEmployee,UpdateEmployee,DeleteEmployee,SoftDeletedEmployee,hardDelete}
