@@ -5,10 +5,10 @@ const sprintmodel = mongoose.Schema({
         type:String
     },
     StartDate:{
-        type:String
+        type:Date
     },
     EndDate:{
-        type:String
+        type:Date
     },
     Description:{
         type:String

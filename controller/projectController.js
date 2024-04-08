@@ -1,7 +1,7 @@
 const model = require('../Model/projectSchema')
 
 const addProject = (req,res) =>{
-let {ProjectTitle,ProjectDescription,StartDate,EndtDate,Status,isDeleted}=req.body
+let {ProjectTitle,ProjectDescription,StartDate,EndtDate,Status,Assign,isDeleted}=req.body
 
       const data =new model({
             ProjectTitle,
@@ -9,10 +9,11 @@ let {ProjectTitle,ProjectDescription,StartDate,EndtDate,Status,isDeleted}=req.bo
             StartDate,
             EndtDate,
             Status,
+            Assign,
             isDeleted
         })
             data.save().then((data2)=>{
-                res.send({msg:"data added succesfully",data})
+                res.send({msg:"data added succesfully",data2    })
             })
             .catch((err)=>{
                 res.send({msg:"err0",err})
@@ -74,4 +75,14 @@ const runnigProject =async (req,res)=>{
     }
 }
 
-module.exports={addProject,updateProject,deleteProject,allProject,runnigProject}
+const hardDelete=(req,res)=>{
+    model.deleteOne({_id:req.query.id})
+    .then((data)=>{
+        res.send({msg:"delete data"})
+    })
+    .catch((err)=>{
+        res.send({msg:"errr",err})
+    })
+}
+
+module.exports={addProject,updateProject,deleteProject,allProject,runnigProject,hardDelete}

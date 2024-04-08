@@ -21,9 +21,13 @@ const prjectSchema = mongoose.Schema({
         type: String,
         required:true
     },
+    Assign:{
+     type: String,
+        required:true
+    },
     isDeleted:{
      type: Boolean,
-     required:true
+     // required:true
  }
 })
 

@@ -1,10 +1,12 @@
 const express = require('express')
 const rout = express.Router()
-const {CreateSprint,UpdateSprint,DisplaySprint} = require('../controller/sprintController')
+const {CreateSprint,UpdateSprint,DisplaySprint,DeleteSprint} = require('../controller/sprintController')
 
 rout.post('/CreateSprint',CreateSprint)
 rout.put('/UpdateSprint',UpdateSprint)
 rout.get('/DisplaySprint',DisplaySprint)
+rout.get('/DeleteSprint',DeleteSprint)
+
 
 
 
