@@ -20,7 +20,7 @@ const { AddEmployee, DisplayEmployee, UpdateEmployee, hardDelete,DeleteEmployee,
 // }
 Route.post("/AddEmployee", AddEmployee)
 Route.get("/DisplayEmployee", DisplayEmployee)
-Route.put("/UpdateEmployee", UpdateEmployee)
+Route.post("/UpdateEmployee", UpdateEmployee)
 Route.get("/SoftDeletedEmployee", SoftDeletedEmployee)
 Route.delete("/DeleteEmployee", DeleteEmployee)
 Route.delete("/hardDelete",hardDelete)
