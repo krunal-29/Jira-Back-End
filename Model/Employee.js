@@ -31,7 +31,7 @@ EmployeeNumber:{
 },
 isDeleted:{
     type:Boolean,
-    required:true
+    // required:true
 }
 
 
